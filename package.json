@@ -1,0 +1,25 @@
+{
+  "name": "bash_ascii",
+  "version": "1.0.0",
+  "description": "Tool to make bash script to display ascii art in terminal based on html file from https://www.ascii-art-generator.org/.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachGraceffa/bash_ascii.git"
+  },
+  "keywords": [
+    "ascii"
+  ],
+  "author": "Zachary Graceffa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZachGraceffa/bash_ascii/issues"
+  },
+  "homepage": "https://github.com/ZachGraceffa/bash_ascii#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
