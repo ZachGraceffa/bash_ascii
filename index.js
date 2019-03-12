@@ -1,3 +1,6 @@
+//setting base dir for modules
+global.__basedir = __dirname;
+
 const libCD = require('./lib/createDocument.js');
 const fs = require('fs');
 
@@ -14,8 +17,6 @@ if(process.argv[2] === undefined) {
     console.log("Creating bash script");
 
     var document = libCD.createDocument(process.argv[3]);
-
-    console.log(document);
 }
 else {
     console.log("Unrecognized input.");
