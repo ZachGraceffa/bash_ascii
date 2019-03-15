@@ -4,20 +4,24 @@ global.__basedir = __dirname;
 const libCD = require('./lib/createDocument.js');
 const fs = require('fs');
 
-if(process.argv[2] === undefined) {
-    //todo help section
-    console.log("Must pass in arguments, like -c to create from file.");
-} else if(process.argv[2] === '-c') {
+let htmlLoc = '';
+let esc = 'e';
 
-    if(process.argv[3] === undefined) {
-        console.log("No file specified");
-        return;
+for (i = 2; i < process.argv.length; i++) {
+    if(process.argv[i] === '-c' & process.argv.length >= i + 1) {
+
+        if(process.argv[i + 1] === undefined) {
+            console.log("No file specified");
+            return;
+        }
+
+        htmlLoc = process.argv[i + 1];
     }
-
-    console.log("Creating bash script");
-
-    var document = libCD.createDocument(process.argv[3]);
+    else if(process.argv[i] === '-e' & process.argv.length >= i + 1)
+    {
+        esc = process.argv[i + 1];
+    }
 }
-else {
-    console.log("Unrecognized input.");
-}
+
+console.log("Creating bash script");
+var document = libCD.createDocument(htmlLoc, esc);
